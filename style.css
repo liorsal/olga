@@ -1,275 +1,344 @@
-/* Import Alef font for hero text */
-@import url('https://fonts.googleapis.com/css2?family=Alef:wght@300;400;700&display=swap');
-
+/* Variables */
 :root {
-    --primary-color: #1a5276;
-    --secondary-color: #3498db;
-    --accent-color: #FF0033;
-    --text-color: #333;
-    --light-bg: #f9f9f9;
-    --border-radius: 8px;
+    --accent-red: #E53935;
+    --bg-dark: #222;
+    --bg-medium: #333;
+    --bg-light: #444;
+    --text-primary: #fff;
+    --text-secondary: #ddd;
+    --border-color: rgba(255, 255, 255, 0.1);
+    --border-radius: 12px;
+    --gap: 1.5rem;
+    --transition: all 0.3s ease;
+}
+
+/* Base Styles */
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    line-height: 1.6;
+    color: var(--text-primary);
+    background-color: var(--bg-dark);
+    margin: 0;
+    padding: 0;
 }
 
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
 }
 
-body {
-    font-family: 'Times New Roman', serif;
-    line-height: 1.6;
-    color: var(--text-color);
-    background-color: #fff;
+/* Container */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 var(--gap);
 }
 
+/* Header */
 header {
-    position: static; /* header should scroll with content */
-    top: 0;
-    z-index: 10;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: clamp(0.5rem, 2vw, 1rem) 0;
-    background: rgba(255,255,255,0.95);
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: var(--bg-medium);
+    border-bottom: 1px solid var(--border-color);
+    padding: 0;
 }
 
-.logo img,
-.slogan img {
-    max-height: 60px;
+.header-bar {
+    display: flex;
+    align-items: center;
+    position: relative;
+    min-height: 70px;
+    max-width: 1100px; /* Ensure header content aligns */
+    margin: 0 auto;      /* Center header content */
+    padding: 0 10px; /* Reduced horizontal padding */
+}
+
+.slogan-image {
+    position: absolute;
+    top: 10px; /* Adjust vertical position */
+    right: -280px; /* Close to the right edge */
+    height: 40px; /* Adjust size as needed */
     width: auto;
 }
 
-.slogan a {
-    color: var(--primary-color);
-    text-decoration: none;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    border: 2px solid var(--primary-color);
-    padding: 8px 15px;
-    border-radius: var(--border-radius);
+.logo {
+    position: absolute;
+    top: 10px; /* Adjust vertical position */
+    left: -280px; /* Corrected: Close to the left edge */
+    height: 40px; /* Adjust size as needed */
+    width: auto;
+    display: block; /* Ensure it behaves as a block */
+    margin: 0; /* Reset margin */
 }
 
-.slogan a:hover {
-    background-color: var(--primary-color);
-    color: #fff;
+.header-center {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-main {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 40px 20px;
-}
-
-.hero {
-    text-align: center;
-    margin-bottom: 50px;
-}
-
-h1 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #000;
-    margin-bottom: 15px;
-}
-
-h2 {
-    font-size: 2rem;
-    font-weight: 600;
-    color: #111;
-    margin-bottom: 15px;
-}
-
-section {
-    margin-bottom: 50px;
-}
-
-h3 {
+.header-center span {
+    color: var(--text-primary);
     font-size: 1.5rem;
-    color: var(--secondary-color);
-    margin-bottom: 20px;
-    padding-bottom: 10px;
-    border-bottom: 2px solid var(--secondary-color);
+    font-weight: 600;
+    letter-spacing: 1px;
 }
 
-p, li {
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #333;
+/* Main Content */
+main {
+    max-width: 1100px; /* Ensure main content uses container width */
+    margin: 0 auto;
+    padding: var(--gap);
+}
+
+main > section { /* Apply background/padding to top-level sections in main */
+    background: rgba(255, 255, 255, 0.03); /* Slightly lighter background for sections */
+    border-radius: var(--border-radius);
+    margin-bottom: 2rem;
+    padding: 1.5rem var(--gap);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05); /* Slightly enhanced shadow */
+    border: 1px solid var(--border-color); /* Add subtle border */
+}
+
+/* General Heading Styles within Sections */
+main > section h2 {
+    color: var(--text-primary);
+    font-size: 1.6rem; /* Adjusted size */
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid var(--accent-red);
+    display: inline-block;
+    padding-bottom: 0.4rem;
+}
+
+main > section h3 {
+    color: var(--text-primary);
+    font-size: 1.4rem; /* Adjusted size */
+    margin-top: 1.5rem;
     margin-bottom: 1rem;
 }
 
-ul {
-    padding-left: 25px;
+main > section h4 {
+    color: var(--accent-red); /* Consistent red for H4 */
+    font-size: 1.15rem;
+    margin-bottom: 0.8rem;
 }
 
-li {
-    margin-bottom: 10px;
+main > section ul, main > section ol {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+    padding-left: 1.25rem;
 }
 
-.highlights {
+main > section li {
+    margin-bottom: 0.6rem;
+    line-height: 1.5;
+}
+
+/* Course Title Specific */
+.course-title h1 {
+    text-align: center;
+    color: var(--accent-red);
+    font-size: 2.4rem; /* Slightly larger */
+    margin-bottom: 1rem; /* Less margin below title */
+    font-weight: 700;
+}
+.course-title {
+    background: none; /* No background for title section */
+    border: none;
+    box-shadow: none;
+    padding-top: 0;
+}
+
+/* Course Summary Overview Specifics */
+.course-summary-overview h3 {
+    margin-top: 1rem;
+    color: var(--accent-red); /* Make summary day titles red */
+    font-size: 1.2rem;
+}
+
+.course-summary-overview div {
+     margin-bottom: 1rem;
+}
+
+.course-summary-overview p:last-of-type {
+    font-style: italic;
+    color: var(--text-secondary);
+    margin-top: 1.5rem;
+    text-align: center; /* Center the final summary line */
+}
+
+/* Detailed Schedule Tabs */
+.detailed-schedule .tab-nav {
     display: flex;
-    flex-direction: column;
-    gap: 30px;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid var(--border-color); /* Add a line below tabs */
 }
 
-.day {
-    background-color: var(--light-bg);
-    padding: 25px;
-    border-radius: var(--border-radius);
-    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+.detailed-schedule .tab-nav button {
+    background-color: transparent;
+    border: none; /* Remove border */
+    border-bottom: 3px solid transparent; /* Placeholder for active state */
+    color: var(--text-secondary);
+    padding: 0.75rem 1.5rem;
+    font-size: 1.1rem; /* Slightly larger tab text */
+    font-weight: 600;
+    border-radius: 0; /* Remove border-radius */
+    cursor: pointer;
+    transition: var(--transition);
+    margin-bottom: -2px; /* Overlap the container border */
 }
 
-h4 {
-    font-size: 1.3rem;
-    color: var(--secondary-color);
-    margin-bottom: 15px;
+.detailed-schedule .tab-nav button:hover {
+    color: var(--text-primary); /* White on hover */
+    border-bottom-color: rgba(255, 255, 255, 0.5); /* Subtle hover indicator */
 }
 
-.register {
-    text-align: center;
-    margin-top: 60px;
+.detailed-schedule .tab-nav button[aria-selected="true"] {
+    color: var(--accent-red); /* Red for selected tab */
+    border-bottom-color: var(--accent-red); /* Red underline for active tab */
 }
 
-.register-button {
-    display: inline-block;
-    background-color: var(--accent-color);
-    color: #fff;
-    padding: 15px 40px;
-    font-size: 1.3rem;
-    text-decoration: none;
-    border-radius: var(--border-radius);
+.detailed-schedule .tab-content {
+    position: relative;
+    min-height: 400px; /* Adjust as needed */
+    overflow: hidden;
+    padding-top: 1.5rem; /* Space above tab content */
+}
+
+.detailed-schedule .day-content {
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    /* height: 100%; Removed height for auto-sizing */
+    top: 1.5rem; /* Match padding-top of parent */
+    left: 0;
+    transition: opacity 0.3s ease-in-out;
+    pointer-events: none;
+    /* Removed padding: var(--gap); - padding now on parent or session */
+}
+
+.detailed-schedule .day-content.active {
+    opacity: 1;
+    position: relative; /* Change to relative when active */
+    pointer-events: auto;
+    top: 0; /* Reset top position when active */
+}
+
+/* Styling within Tabs */
+.detailed-schedule .day-content h3 {
+     /* Use general section h3 style */
+     margin-top: 0; /* No top margin for day title inside tab */
+}
+
+.detailed-schedule .session {
+    margin-bottom: 1.8rem;
+    padding-left: 1rem;
+    border-left: 3px solid rgba(229, 57, 53, 0.2);
+}
+
+.detailed-schedule .session h4 em {
+    font-style: normal;
+    color: var(--text-secondary);
     font-weight: 500;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+    margin-right: 0.5rem;
 }
 
-.register-button:hover {
-    background-color: #c0392b;
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(231, 76, 60, 0.4);
+.detailed-schedule .session p strong {
+    color: var(--text-primary);
+    font-weight: 600;
 }
 
-footer {
-    background-color: var(--primary-color);
-    color: #fff;
+.detailed-schedule .session p {
+     margin-bottom: 0.5rem;
+}
+
+.detailed-schedule .break {
     text-align: center;
-    padding: 20px;
-    margin-top: 50px;
+    margin: 2rem 0;
+    font-weight: 600;
+    color: var(--text-secondary);
+    border-top: 1px dashed var(--border-color);
+    border-bottom: 1px dashed var(--border-color);
+    padding: 0.75rem 0;
 }
 
-/* Responsive design */
-@media (min-width: 768px) {
-    .highlights {
-        flex-direction: row;
-        flex-wrap: wrap;
-    }
-    
-    .day {
-        flex: 1;
-        min-width: 250px;
-    }
+/* Footer */
+footer {
+    background-color: var(--bg-medium);
+    padding: var(--gap);
+    border-top: 1px solid var(--border-color);
+    text-align: center;
+    margin-top: 3rem; /* More space before footer */
 }
 
+footer p {
+    color: var(--text-secondary);
+    margin: 0;
+    font-size: 0.875rem;
+}
+
+/* Media Queries for Responsiveness */
 @media (max-width: 768px) {
-    h1 {
-        font-size: 2.2rem;
+    .header-bar {
+         padding: 0 10px; /* Keep reduced padding on smaller screens */
     }
-    
-    h2 {
-        font-size: 1.5rem;
-    }
-}
 
-@media (max-width: 480px) {
-    h1 {
+    .header-center span {
+        font-size: 1.2rem; /* Smaller header text */
+    }
+
+    main {
+        padding: 1rem; /* Reduce main padding */
+    }
+
+    main > section {
+        padding: 1rem; /* Reduce section padding */
+    }
+
+    .course-title h1 {
         font-size: 1.8rem;
     }
-}
 
-/* Dot background canvas */
-.dot-background {
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    z-index: -2; /* Behind the PDF embed */
-    overflow: hidden;
-}
+    main > section h2 {
+        font-size: 1.4rem;
+    }
 
-.dot-background canvas {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
+     main > section h3 {
+        font-size: 1.2rem;
+    }
 
-/* Container for all page content to isolate it from dots */
-.content-container {
-    max-width: 60ch;
-    margin: 0 auto;
-    padding: clamp(1rem, 4vw, 2rem);
-    background: rgba(255,255,255,0.85);
-    border-radius: 8px;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
-}
+    main > section h4 {
+        font-size: 1.05rem;
+    }
 
-/* Accent for links & icons */
-a, .icon {
-    color: var(--accent-color);
-    text-decoration: none;
-    transition: color 0.2s ease;
-}
-a:hover, .icon:hover {
-    color: #c00;
-}
+    .detailed-schedule .tab-nav {
+        flex-direction: column; /* Stack tabs vertically */
+        gap: 0.5rem;
+        border-bottom: none; /* Remove bottom border for stacked tabs */
+    }
 
-/* Remove full-screen PDF CSS; reposition using .slogan-pdf */
+    .detailed-schedule .tab-nav button {
+         border-bottom: none; /* Remove bottom border */
+         border-left: 3px solid transparent; /* Left border placeholder */
+         text-align: left;
+         margin-bottom: 0;
+         padding: 0.75rem 1rem;
+    }
 
-/* Slogan PDF in upper-left corner */
-.slogan-pdf {
-    position: fixed;
-    top: clamp(0.5rem, 2vw, 1rem);
-    left: clamp(1rem, 5vw, 5%);
-    z-index: 11;
-    width: 150px;
-    height: 50px; /* fixed height to display PDF */
-    background: rgba(255,255,255,0.9);
-    padding: 5px;
-    border-radius: 4px;
-}
-.slogan-pdf iframe {
-    width: 100%;
-    height: 100%;
-    display: block;
-    border: none;
-}
+    .detailed-schedule .tab-nav button:hover {
+        border-bottom-color: transparent; /* Remove hover border */
+        border-left-color: rgba(255, 255, 255, 0.5);
+    }
 
-/* Ensure embed fills slogan container */
-.slogan-pdf embed {
-    width: 100%;
-    height: 100%;
-    display: block;
-    border: none;
-}
+    .detailed-schedule .tab-nav button[aria-selected="true"] {
+        border-bottom-color: transparent; /* Remove active border */
+        border-left-color: var(--accent-red);
+        background-color: rgba(229, 57, 53, 0.1); /* Slight background for active */
+    }
 
-/* Alternate section background for breathing room */
-section:nth-of-type(even) .content-container {
-    background: rgba(245,245,245,0.9);
+    .detailed-schedule .tab-content {
+        min-height: 300px; /* Adjust min-height */
+    }
 }
-
-/* Hero container fit to content (approx. two lines) */
-.hero .content-container {
-    display: inline-block;
-    width: fit-content;
-    max-width: 150ch; /* ensures text wraps within two lines */
-    margin: 0 auto;
-}
-
-/* Make Course Overview heading more blue */
-.overview .content-container h3 {
-    color: var(--secondary-color);
-    border-bottom: 2px solid var(--secondary-color);
-} 
