@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IDF Medical Corps' Healthcare Course</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dot-background"><canvas id="dotCanvas"></canvas></div>
+    <header>
+        <div class="logo">
+            <img src="logo.jpeg" alt="Logo">
+        </div>
+        <div class="slogan">
+            <img src="slogan.png" alt="Slogan">
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="content-container">
+                <h1>🌍 Reimagining Healthcare in Crisis and Beyond</h1>
+                <h2>The IDF Medical Corps' Rapid Transformation Amidst a Multifront Conflict</h2>
+            </div>
+        </section>
+
+        <section class="overview">
+            <div class="content-container">
+                <h3>💡 Course Overview</h3>
+                <p>In the face of one of the largest military healthcare mobilizations in modern history, the Israel Defense Forces (IDF) Medical Corps redefined leadership, adaptability, and innovation under pressure. This unique 3-day course offers an inside look at how military healthcare was transformed during a prolonged, multifront conflict — and how its lessons can reshape healthcare resilience worldwide.</p>
+            </div>
+        </section>
+
+        <section class="objectives">
+            <div class="content-container">
+                <h3>🎯 Key Learning Objectives</h3>
+                <ul>
+                    <li>Understand the tactical and strategic challenges of delivering care in high-pressure, multi-front conflicts.</li>
+                    <li>Explore real-world case studies of rapid adaptation, resilience-building, and resource coordination.</li>
+                    <li>Learn how to implement actionable strategies for crisis response, innovation, and system-building in both military and civilian settings.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="format">
+            <div class="content-container">
+                <h3>🗓️ Format & Audience</h3>
+                <p>3 Days | Interactive lectures, panels, simulations, and scenario-based case studies.</p>
+                <p>Open to healthcare professionals, organizational leaders, and policy experts worldwide.</p>
+            </div>
+        </section>
+
+        <section class="highlights">
+            <div class="content-container">
+                <h3>🧭 Course Highlights</h3>
+                
+                <div class="day">
+                    <h4>Day 1: Mobilizing in Crisis</h4>
+                    <ul>
+                        <li>Leadership under fire: Firsthand accounts from combat medics and doctors, commanders, and rescue teams.</li>
+                        <li>Tactical case studies: Rapid adaptation and response to mass casualty events.</li>
+                        <li>Evolving public & military healthcare as a critical mission in conflict.</li>
+                    </ul>
+                </div>
+                
+                <div class="day">
+                    <h4>Day 2: Strategic Command & Mental Health</h4>
+                    <ul>
+                        <li>Executive decision-making during prolonged war.</li>
+                        <li>Innovations in combat care: from blood products to digital documentation.</li>
+                        <li>Reinventing mental health support — from the frontline to recovery.</li>
+                    </ul>
+                </div>
+                
+                <div class="day">
+                    <h4>Day 3: Future Preparedness & Innovation</h4>
+                    <ul>
+                        <li>Frontline physiotherapy and specialty care in combat zones.</li>
+                        <li>Airborne evacuation: Precision and innovation under fire.</li>
+                        <li>From recovery to readiness: Collaborations, curriculum changes, and system evolution.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="why-attend">
+            <div class="content-container">
+                <h3>📣 Why Take This Course?</h3>
+                <p>Whether you're preparing for the next emergency, seeking leadership insights, or looking to transform your healthcare system for resilience — this course offers a rare opportunity to learn from the most demanding battlefield of all: real-world war.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 IDF Medical Corps. All rights reserved.</p>
+    </footer>
+
+    <script>
+      (() => {
+        const c=document.getElementById('dotCanvas'),ctx=c.getContext('2d'),D=4,S=25,J=0.05,d=[];
+        const z=()=>{c.width=innerWidth*devicePixelRatio;c.height=innerHeight*devicePixelRatio;d.length=0;
+          const C=Math.ceil(c.width/S)+1,R=Math.ceil(c.height/S)+1;
+          for(let y=0;y<R;y++)for(let x=0;x<C;x++)d.push({x:x*S+S*J*(2*Math.random()-1),y:y*S+S*J*(2*Math.random()-1)});
+        };
+        const r=()=>{const t=Math.min(scrollY/(document.body.scrollHeight-innerHeight),1);
+          const f=t<=.5?t*2:1,g=t<=.5?0:(t-0.5)*2;
+          const R=Math.round((1-f)*255+g*108),G=Math.round(g*108),B=Math.round((1-f)*51+g*108);
+          ctx.clearRect(0,0,c.width,c.height);ctx.fillStyle=`rgba(${R},${G},${B},0.15)`;
+          d.forEach(p=>{ctx.beginPath();ctx.arc(p.x,p.y,D,0,6.283);ctx.fill();});
+        };
+        ['resize','load'].forEach(e=>window.addEventListener(e,()=>{z();r();}));
+        window.addEventListener('scroll',()=>requestAnimationFrame(r),{passive:true});
+      })();
+    </script>
+</body>
+</html> 
