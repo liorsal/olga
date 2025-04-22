@@ -51,21 +51,23 @@ header {
 }
 
 .slogan-image {
-    position: absolute;
-    top: 10px; /* Adjust vertical position */
-    right: -280px; /* Close to the right edge */
-    height: 40px; /* Adjust size as needed */
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    height: 40px;
     width: auto;
+    margin: 0;
+    z-index: 1000;
 }
 
 .logo {
-    position: absolute;
-    top: 10px; /* Adjust vertical position */
-    left: -280px; /* Corrected: Close to the left edge */
-    height: 40px; /* Adjust size as needed */
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    height: 40px;
     width: auto;
-    display: block; /* Ensure it behaves as a block */
-    margin: 0; /* Reset margin */
+    margin: 0;
+    z-index: 1000;
 }
 
 .header-center {
