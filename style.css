@@ -42,28 +42,17 @@ header {
 
 .header-bar {
     display: flex;
+    justify-content: space-between;
     align-items: center;
     position: relative;
     min-height: 70px;
-    max-width: 1100px; /* Ensure header content aligns */
-    margin: 0 auto;      /* Center header content */
-    padding: 0 10px; /* Reduced horizontal padding */
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 10px;
 }
 
-.slogan-image {
-    position: fixed;
-    top: 10px;
-    right: 10px;
-    height: 40px;
-    width: auto;
-    margin: 0;
-    z-index: 1000;
-}
-
-.logo {
-    position: fixed;
-    top: 10px;
-    left: 10px;
+.logo, .slogan-image {
+    position: static;
     height: 40px;
     width: auto;
     margin: 0;
@@ -281,5 +270,34 @@ footer p {
     font-size: 0.875rem;
 }
 
-/* Media Queries for Responsiveness - REMOVED */
-/* @media (max-width: 768px) { ... } */
+/* Mobile adjustments for header and layout */
+@media (max-width: 600px) {
+    .course-title h1 {
+        font-size: 1.6rem;
+    }
+    .header-center span {
+        font-size: 1.2rem;
+    }
+    .header-bar {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.5rem 1rem;
+        background-color: var(--bg-medium);
+    }
+    .logo,
+    .slogan-image {
+        position: static;
+        height: 32px;
+        width: auto;
+    }
+    main {
+        padding: 1rem;
+    }
+    main > section {
+        padding: 1rem;
+    }
+    .detailed-schedule .tab-nav {
+        gap: 0.5rem;
+    }
+}
