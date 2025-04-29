@@ -364,6 +364,15 @@ footer p {
         margin-bottom: 0.4rem;
         padding-left: 0.4rem;
     }
+    .detailed-schedule .tab-nav {
+        margin-bottom: 0 !important;
+    }
+    .detailed-schedule .tab-content {
+        padding-top: 0 !important;
+    }
+    .detailed-schedule .tab-content > *:first-child {
+        margin-top: 0 !important;
+    }
 }
 
 /* Paragraphs use Arial */
