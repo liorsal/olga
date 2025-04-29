@@ -369,9 +369,17 @@ footer p {
     }
     .detailed-schedule .tab-content {
         padding-top: 0 !important;
+        min-height: 0 !important;
+        margin-top: 0 !important;
+    }
+    .detailed-schedule .day-content {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+        min-height: 0 !important;
     }
     .detailed-schedule .tab-content > *:first-child {
         margin-top: 0 !important;
+        padding-top: 0 !important;
     }
 }
 
