@@ -149,6 +149,7 @@ main > section li {
 .course-title h1 .title-small {
     display: block;
     font-size: 1.484rem; /* 2.4rem / 1.618 */
+    color: #000 !important;
 }
 
 .course-title {
@@ -182,7 +183,8 @@ main > section li {
     display: flex;
     justify-content: center;
     gap: 1rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
+    margin-top: 0.5rem;
     border-bottom: 2px solid var(--border-color); /* Add a line below tabs */
 }
 
@@ -314,14 +316,27 @@ footer p {
         padding: 1rem;
     }
     main > section {
-        padding: 1rem;
+        padding: 0.75rem;
+        margin-bottom: 1.5rem;
     }
     .detailed-schedule .tab-nav {
         gap: 0.5rem;
+        margin-top: 0.25rem;
+        margin-bottom: 0.75rem;
     }
     footer {
         background-color: #fff !important;
         border-top: 1px solid #000 !important;
+    }
+    main > section h2 {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+    }
+    main > section li {
+        margin-bottom: 0.4rem;
+    }
+    .detailed-schedule .session {
+        margin-bottom: 1.2rem;
     }
 }
 
