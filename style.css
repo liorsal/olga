@@ -306,6 +306,10 @@ footer p {
     .detailed-schedule .tab-nav {
         gap: 0.5rem;
     }
+    footer {
+        background-color: #fff !important;
+        border-top: 1px solid #000 !important;
+    }
 }
 
 /* Paragraphs use Arial */
