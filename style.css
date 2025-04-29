@@ -7,15 +7,15 @@
     --text-primary: #fff;
     --text-secondary: #000;
     --border-color: rgba(255, 255, 255, 0.1);
-    --border-radius: 12px;
-    --gap: 1.5rem;
+    --border-radius: 6px;
+    --gap: 0.7rem;
     --transition: all 0.3s ease;
 }
 
 /* Base Styles */
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    line-height: 1.6;
+    line-height: 1.3;
     color: #000;
     background-color: #fff;
     margin: 0;
@@ -45,15 +45,15 @@ header {
     justify-content: flex-start;
     align-items: center;
     position: relative;
-    min-height: 70px;
+    min-height: 50px;
     max-width: 1100px;
     margin: 0 auto;
-    padding: 0 10px;
+    padding: 0 8px;
 }
 
 .logo, .slogan-image {
     position: static;
-    height: 40px;
+    height: 35px;
     width: auto;
     margin: 0;
     z-index: 1000;
@@ -74,187 +74,184 @@ header {
 
 .header-center span {
     color: #000;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: 600;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
     font-family: 'Times New Roman', serif;
 }
 
 /* Main Content */
 main {
-    max-width: 1100px; /* Ensure main content uses container width */
+    max-width: 1100px;
     margin: 0 auto;
-    padding: var(--gap);
+    padding: 0.5rem;
 }
 
-main > section { /* Apply background/padding to top-level sections in main */
-    background: rgba(255, 255, 255, 0.03); /* Slightly lighter background for sections */
+main > section {
+    background: rgba(255, 255, 255, 0.03);
     border-radius: var(--border-radius);
-    margin-bottom: 2rem;
-    padding: 1.5rem var(--gap);
-    box-shadow: 0 3px 10px rgba(0,0,0,0.05); /* Slightly enhanced shadow */
-    border: 1px solid var(--border-color); /* Add subtle border */
+    margin-bottom: 0.7rem;
+    padding: 0.7rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    border: 1px solid var(--border-color);
 }
 
 /* General Heading Styles within Sections */
 main > section h2 {
     color: #000 !important;
-    font-size: 1.6rem; /* Adjusted size */
-    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+    margin-bottom: 0.7rem;
     border-bottom: 2px solid var(--accent-red);
     display: inline-block;
-    padding-bottom: 0.4rem;
+    padding-bottom: 0.2rem;
 }
 
 main > section h3 {
     color: var(--text-primary);
-    font-size: 1.4rem; /* Adjusted size */
-    margin-top: 1.5rem;
-    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    margin-top: 0.7rem;
+    margin-bottom: 0.4rem;
 }
 
 main > section h4 {
-    color: var(--accent-red); /* Consistent red for H4 */
-    font-size: 1.15rem;
-    margin-bottom: 0.8rem;
+    color: var(--accent-red);
+    font-size: 0.95rem;
+    margin-bottom: 0.3rem;
 }
 
 main > section ul, main > section ol {
     color: var(--text-secondary);
-    font-size: 1rem;
-    margin-left: 1rem;
-    margin-bottom: 1rem;
-    padding-left: 1.25rem;
+    font-size: 0.9rem;
+    margin-left: 0.6rem;
+    margin-bottom: 0.6rem;
+    padding-left: 0.8rem;
 }
 
 main > section li {
-    margin-bottom: 0.6rem;
-    line-height: 1.5;
+    margin-bottom: 0.3rem;
+    line-height: 1.3;
 }
 
 /* Course Title Specific */
 .course-title h1 {
     text-align: left;
     color: var(--accent-red);
-    font-size: 2.4rem; /* Slightly larger */
-    margin-bottom: 0.5rem; /* Reduced margin below title */
+    font-size: 1.8rem;
+    margin-bottom: 0.2rem;
     font-weight: 700;
 }
 
 /* Golden ratio sizing for split title */
 .course-title h1 .title-large {
     display: block;
-    font-size: 2.4rem; /* Base size */
+    font-size: 1.8rem;
 }
 .course-title h1 .title-small {
     display: block;
-    font-size: 1.484rem; /* 2.4rem / 1.618 */
+    font-size: 1.15rem;
     color: #000 !important;
 }
 
 .course-title {
-    background: none; /* No background for title section */
+    background: none;
     border: none;
     box-shadow: none;
     padding-top: 0;
-    margin-bottom: 0px; /* Set exact gap to 30px */
+    margin-bottom: 0;
 }
 
 /* Course Summary Overview Specifics */
 .course-summary-overview h3 {
-    margin-top: 1rem;
-    color: var(--accent-red); /* Make summary day titles red */
-    font-size: 1.2rem;
+    margin-top: 0.6rem;
+    color: var(--accent-red);
+    font-size: 1rem;
 }
 
 .course-summary-overview div {
-     margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
 }
 
 .course-summary-overview p:last-of-type {
     font-style: italic;
     color: var(--text-secondary);
-    margin-top: 1.5rem;
-    text-align: center; /* Center the final summary line */
+    margin-top: 0.7rem;
+    text-align: center;
 }
 
 /* Detailed Schedule Tabs */
 .detailed-schedule .tab-nav {
     display: flex;
     justify-content: center;
-    gap: 1rem;
-    margin-bottom: 1rem;
-    margin-top: 0.5rem;
-    border-bottom: 2px solid var(--border-color); /* Add a line below tabs */
+    gap: 0.3rem;
+    margin-bottom: 0.5rem;
+    margin-top: 0.2rem;
+    border-bottom: 1px solid var(--border-color);
 }
 
 .detailed-schedule .tab-nav button {
     background-color: transparent;
-    border: none; /* Remove border */
-    border-bottom: 3px solid transparent; /* Placeholder for active state */
+    border: none;
+    border-bottom: 2px solid transparent;
     color: var(--text-secondary);
-    padding: 0.75rem 1.5rem;
-    font-size: 1.1rem; /* Slightly larger tab text */
+    padding: 0.4rem 0.8rem;
+    font-size: 0.95rem;
     font-weight: 600;
-    border-radius: 0; /* Remove border-radius */
+    border-radius: 0;
     cursor: pointer;
     transition: var(--transition);
-    margin-bottom: -2px; /* Overlap the container border */
+    margin-bottom: -1px;
 }
 
 .detailed-schedule .tab-nav button:hover {
-    color: #444; /* medium gray for hover, always visible on white */
+    color: #444;
     border-bottom-color: #888;
 }
 
 .detailed-schedule .tab-nav button[aria-selected="true"] {
-    color: var(--accent-red); /* Red for selected tab */
-    border-bottom-color: var(--accent-red); /* Red underline for active tab */
+    color: var(--accent-red);
+    border-bottom-color: var(--accent-red);
 }
 
 .detailed-schedule .tab-content {
     position: relative;
-    min-height: 400px; /* Adjust as needed */
+    min-height: 300px;
     overflow: hidden;
-    padding-top: 1.5rem; /* Space above tab content */
+    padding-top: 0.7rem;
 }
 
 .detailed-schedule .day-content {
     opacity: 0;
     position: absolute;
     width: 100%;
-    /* height: 100%; Removed height for auto-sizing */
-    top: 1.5rem; /* Match padding-top of parent */
+    top: 0.7rem;
     left: 0;
     transition: opacity 0.3s ease-in-out;
     pointer-events: none;
-    /* Removed padding: var(--gap); - padding now on parent or session */
 }
 
 .detailed-schedule .day-content.active {
     opacity: 1;
-    position: relative; /* Change to relative when active */
+    position: relative;
     pointer-events: auto;
-    top: 0; /* Reset top position when active */
+    top: 0;
 }
 
 /* Styling within Tabs */
 .detailed-schedule .day-content h3 {
-     /* Use general section h3 style */
-     margin-top: 0; /* No top margin for day title inside tab */
+     margin-top: 0;
 }
 
 .detailed-schedule .session {
-    margin-bottom: 1.8rem;
-    padding-left: 1rem;
-    border-left: 3px solid rgba(229, 57, 53, 0.2);
+    margin-bottom: 0.9rem;
+    padding-left: 0.6rem;
+    border-left: 2px solid rgba(229, 57, 53, 0.2);
 }
 
 .detailed-schedule .session h4 em {
     font-style: normal;
     color: var(--text-secondary);
     font-weight: 500;
-    margin-right: 0.5rem;
+    margin-right: 0.2rem;
 }
 
 .detailed-schedule .session p strong {
@@ -263,96 +260,109 @@ main > section li {
 }
 
 .detailed-schedule .session p {
-     margin-bottom: 0.5rem;
+    margin-bottom: 0.2rem;
 }
 
 .detailed-schedule .break {
     text-align: center;
-    margin: 2rem 0;
+    margin: 0.9rem 0;
     font-weight: 600;
     color: var(--text-secondary);
     border-top: 1px dashed var(--border-color);
     border-bottom: 1px dashed var(--border-color);
-    padding: 0.75rem 0;
+    padding: 0.3rem 0;
 }
 
 /* Footer */
 footer {
     background-color: #fff;
-    padding: var(--gap);
+    padding: 0.7rem;
     border-top: 1px solid #000;
     text-align: center;
-    margin-top: 3rem; /* More space before footer */
+    margin-top: 1rem;
 }
 
 footer p {
     color: var(--text-secondary);
     margin: 0;
-    font-size: 0.875rem;
+    font-size: 0.75rem;
 }
 
 /* Mobile adjustments for header and layout */
 @media (max-width: 600px) {
     .course-title h1 {
-        font-size: 1.6rem;
+        font-size: 1.2rem;
     }
     .header-center span {
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
     .header-bar {
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        padding: 0.5rem 1rem;
+        padding: 0.3rem 0.6rem;
         background-color: #fff;
     }
     .logo,
     .slogan-image {
         position: static;
-        height: 32px;
+        height: 24px;
         width: auto;
     }
     main {
-        padding: 1rem;
+        padding: 0.5rem;
     }
     main > section {
-        padding: 0.75rem;
-        margin-bottom: 1.5rem;
+        padding: 0.5rem;
+        margin-bottom: 0.6rem;
     }
     .detailed-schedule .tab-nav {
-        gap: 0.5rem;
-        margin-top: 0.25rem;
-        margin-bottom: 0.75rem;
+        gap: 0.2rem;
+        margin-top: 0.1rem;
+        margin-bottom: 0.3rem;
     }
     footer {
         background-color: #fff !important;
         border-top: 1px solid #000 !important;
     }
     main > section h2 {
-        font-size: 1.3rem;
-        margin-bottom: 1rem;
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
     }
     main > section li {
-        margin-bottom: 0.4rem;
+        margin-bottom: 0.2rem;
     }
     .detailed-schedule .session {
-        margin-bottom: 1.2rem;
+        margin-bottom: 0.5rem;
+        padding-left: 0.4rem;
     }
     
     /* Reduce tab spacing on mobile */
     .detailed-schedule .tab-content {
-        padding-top: 0.5rem; /* Drastically reduce space above tab content */
-        min-height: 300px; /* Reduce minimum height */
+        padding-top: 0;
+        min-height: 200px;
     }
     
     /* Reduce session spacing on mobile */
     .detailed-schedule .day-content {
-        top: 0.5rem; /* Match reduced padding-top */
+        top: 0;
     }
     
     /* Make first session closer to tabs */
     .detailed-schedule .session:first-child {
         margin-top: 0;
+        padding-top: 0;
+    }
+    
+    /* Reduce tab bottom margin */
+    .detailed-schedule .tab-nav {
+        margin-bottom: 0;
+    }
+    
+    /* Reduce space within sessions */
+    .detailed-schedule .session {
+        margin-bottom: 0.4rem;
+        padding-left: 0.4rem;
     }
 }
 
@@ -360,12 +370,16 @@ footer p {
 p {
     font-family: Arial, sans-serif;
     color: #000;
+    margin-top: 0.3rem;
+    margin-bottom: 0.3rem;
 }
 
 /* Headings use Times New Roman */
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Times New Roman', serif;
     color: #000;
+    margin-top: 0.4rem;
+    margin-bottom: 0.4rem;
 }
 
 /* Force in-box section headings to black */
