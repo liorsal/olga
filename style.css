@@ -338,6 +338,22 @@ footer p {
     .detailed-schedule .session {
         margin-bottom: 1.2rem;
     }
+    
+    /* Reduce tab spacing on mobile */
+    .detailed-schedule .tab-content {
+        padding-top: 0.5rem; /* Drastically reduce space above tab content */
+        min-height: 300px; /* Reduce minimum height */
+    }
+    
+    /* Reduce session spacing on mobile */
+    .detailed-schedule .day-content {
+        top: 0.5rem; /* Match reduced padding-top */
+    }
+    
+    /* Make first session closer to tabs */
+    .detailed-schedule .session:first-child {
+        margin-top: 0;
+    }
 }
 
 /* Paragraphs use Arial */
